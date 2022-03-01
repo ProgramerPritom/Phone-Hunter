@@ -2,6 +2,8 @@ const getSearch = () => {
     const searchField = document.getElementById('search-field');
     const searchValue = searchField.value;
 
+    
+
     // empty Search Error
     const seachError = document.getElementById('search-error');
     if (searchField.value == "") {
@@ -10,7 +12,7 @@ const getSearch = () => {
     }
     else{
         seachError.innerText = "";
-
+        
 
         // Load Phone api
         const loadPhone = () => {
@@ -23,7 +25,7 @@ const getSearch = () => {
         
         const resultValue = document.getElementById('search-result');
         const displayData = data =>{
-            const displayApi = document.getElementById('display-api');
+            const resultContainer = document.getElementById('display-api');
             if (data.length > 1) {
                 resultValue.innerText = `${data.length} Result found for ${searchField.value}`;
             }
@@ -32,11 +34,13 @@ const getSearch = () => {
             }
             else if(data == ""){
                 let noResult = `${searchField.value} Result not Found`;
+
                 document.getElementById('search-result').innerText = noResult;
             }
+            searchField.value = "";
+            resultContainer.textContent = "";
 
-
-            
+            // Show Data
             data.forEach(phoneData=>{
                 // console.log(phoneData);
                 const parentDiv = document.getElementById('display-api');
