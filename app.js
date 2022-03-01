@@ -36,10 +36,26 @@ const getSearch = () => {
             }
 
 
-
+            
             data.forEach(phoneData=>{
                 // console.log(phoneData);
+                const parentDiv = document.getElementById('display-api');
+                const div = document.createElement('div');
+                div.classList.add('col');
+                div.innerHTML = `
                 
+                <div class="card">
+                <img src="${phoneData.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Brand Name : ${phoneData.brand}</h5>
+                  <p class="card-text">Name : ${phoneData.phone_name}</p>
+                </div>
+              </div>
+            </div>
+
+                `;
+                parentDiv.appendChild(div);
+
             });
         }
         loadPhone();
