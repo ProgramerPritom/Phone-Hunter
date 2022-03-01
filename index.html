@@ -13,6 +13,67 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+      <!--===========|| Navbar/Header area ||=========-->
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Phone Bazar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">API</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+      </header>
+    <!--=============|| End Of Navbar ||============-->
+    <!--============|| Page Title ||============-->
+
+      <section class="container">
+        <h2 class="text-center mx-auto">Smart Phone Bazar</h2>
+      </section>
+
+    <!--========||End of Page Title ||=========-->
+    <!--============|| Search section||=========-->
+
+      <section class="container">
+        <div class="d-flex mx-auto justify-content-center mb-3 mt-4">
+            <input id="search-field" type="text" class="custom-form form-control" placeholder="Find your best phones" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+            <button onclick="getSearch()" class="btn btn-outline-secondary" type="button" id="button-search">Button</button>
+          </div>
+          <!-- Error message for Search bar -->
+          <div class="error-section">
+              <p id="search-error" class="text-center mx-auto text-danger"></p>
+          </div>
+      </section>
+
+    <!--============||End of Search section||=========-->
+
+    <!--============||Display search section||=========-->
+
+
+    <!--============||End of Display Search section||=========-->
+
+
+
+
+
+
+
+
+
     
 
     <!-- Bootstrap Javascript File -->
