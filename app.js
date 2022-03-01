@@ -7,9 +7,11 @@ const getSearch = () => {
     // empty Search Error
     const seachError = document.getElementById('search-error');
     const resultValue = document.getElementById('search-result');
+    const resultContainer = document.getElementById('display-api');
     if (searchField.value == "") {
         seachError.innerText = 'Please type to find';
         resultValue.innerText = "";
+        resultContainer.textContent = "";
         
     }
     else{
