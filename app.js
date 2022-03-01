@@ -6,8 +6,10 @@ const getSearch = () => {
 
     // empty Search Error
     const seachError = document.getElementById('search-error');
+    const resultValue = document.getElementById('search-result');
     if (searchField.value == "") {
         seachError.innerText = 'Please type to find';
+        resultValue.innerText = "";
         
     }
     else{
@@ -36,6 +38,7 @@ const getSearch = () => {
                 let noResult = `${searchField.value} Result not Found`;
 
                 document.getElementById('search-result').innerText = noResult;
+                
             }
             searchField.value = "";
             resultContainer.textContent = "";
