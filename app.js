@@ -31,10 +31,10 @@ const getSearch = () => {
         const displayData = data =>{
             const resultContainer = document.getElementById('display-api');
             if (data.length > 1) {
-                resultValue.innerText = `${data.length} Result found for ${searchField.value}`;
+                resultValue.innerHTML = `${data.length} Result found for "<strong>${searchField.value}</strong>"`;
             }
             else if(data.length == 1){
-                resultValue.innerText = `${data.length} Result found for ${searchField.value}`;
+                resultValue.innerHTML = `${data.length} Result found for "<strong>${searchField.value}</strong>"`;
             }
             else if(data == ""){
                 let noResult = `${searchField.value} Result not Found`;
@@ -50,11 +50,11 @@ const getSearch = () => {
                 // console.log(phoneData);
                 const parentDiv = document.getElementById('display-api');
                 const div = document.createElement('div');
-                div.classList.add('col');
+                div.classList.add("col");
                 div.innerHTML = `
                 
                 <div class="card">
-                <img src="${phoneData.image}" class="card-img-top" alt="...">
+                <img src="${phoneData.image}" class="card-img-top img-thumbnail" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Brand Name : ${phoneData.brand}</h5>
                   <p class="card-text">Name : ${phoneData.phone_name}</p>
