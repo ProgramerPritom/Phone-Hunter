@@ -90,6 +90,11 @@ const getSearch = () => {
     };
     const displayDetailsInfo = (data) =>{
         console.log(data);
+        const sensorList = data.mainFeatures.sensors;
+        
+        const listNumber = name => name;
+        const arraySensorList = sensorList.map(listNumber);
+        // console.log(arraySensorList);
         const release = data.releaseDate;
         const phoneDetails = document.getElementById('phone-details');
         const div = document.createElement('div');
@@ -107,12 +112,15 @@ const getSearch = () => {
             <p class="card-text"><span><i><b>Storage:</b></i> ${data.mainFeatures.storage}</span><span><i><b> Display-Size:</b></i> ${data.mainFeatures.displaySize}</span>
             <span><i><b> Chip-set:</b></i> ${data.mainFeatures.chipSet}</span>
             <span><i><b> Memory:</b></i> ${data.mainFeatures.memory}</span></p>
+            <h5><b>Sensors:</b></h5>
+            <p class="card-text">${arraySensorList}</p>
             
              
         </div>
         </div>
         </div>
     `;
+    window.scroll(0,0);
     phoneDetails.textContent = "";
     phoneDetails.appendChild(div);
     
