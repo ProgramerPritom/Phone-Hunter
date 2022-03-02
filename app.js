@@ -49,7 +49,7 @@ const getSearch = () => {
             resultContainer.textContent = "";
 
             // Show Data
-            data.forEach(phoneData=>{
+            data.slice(0,20).forEach(phoneData=>{
                 // console.log(phoneData);
                 
                 const parentDiv = document.getElementById('display-api');

@@ -9,7 +9,9 @@ body{
     width: 7%;
     
 }
-
+.title-img{
+    width: 15%;
+}
 .custom-form{
     width: 50% !important;
 }
