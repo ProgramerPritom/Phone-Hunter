@@ -47,7 +47,7 @@ const getSearch = () => {
             }
             searchField.value = "";
             resultContainer.textContent = "";
-
+            phoneDetails.textContent = "";
             // Show Data
             data.slice(0,20).forEach(phoneData=>{
                 // console.log(phoneData);
@@ -90,11 +90,19 @@ const getSearch = () => {
     };
     const displayDetailsInfo = (data) =>{
         console.log(data);
+        // declared sensor section
         const sensorList = data.mainFeatures.sensors;
-        
         const listNumber = name => name;
         const arraySensorList = sensorList.map(listNumber);
         // console.log(arraySensorList);
+
+        //declared others section 
+        if(data.others){
+            console.log(data.others);
+        }else{
+            console.log("hello");
+        }
+
         const release = data.releaseDate;
         const phoneDetails = document.getElementById('phone-details');
         const div = document.createElement('div');
