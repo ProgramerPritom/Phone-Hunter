@@ -8,11 +8,12 @@ const getSearch = () => {
     const seachError = document.getElementById('search-error');
     const resultValue = document.getElementById('search-result');
     const resultContainer = document.getElementById('display-api');
+    const phoneDetails = document.getElementById('phone-details');
     if (searchField.value == "") {
         seachError.innerText = 'Please type to find';
         resultValue.innerText = "";
         resultContainer.textContent = "";
-        
+        phoneDetails.textContent ="";
     }
     else{
         seachError.innerText = "";
@@ -28,6 +29,7 @@ const getSearch = () => {
         };
         
         const resultValue = document.getElementById('search-result');
+        const phoneDetails = document.getElementById('phone-details');
         const displayData = data =>{
             const resultContainer = document.getElementById('display-api');
             if (data.length > 1) {
@@ -40,6 +42,7 @@ const getSearch = () => {
                 let noResult = `${searchField.value} Result not Found`;
 
                 document.getElementById('search-result').innerText = noResult;
+                phoneDetails.textContent = "";
                 
             }
             searchField.value = "";
@@ -48,6 +51,7 @@ const getSearch = () => {
             // Show Data
             data.forEach(phoneData=>{
                 // console.log(phoneData);
+                
                 const parentDiv = document.getElementById('display-api');
                 const div = document.createElement('div');
                 div.classList.add("col");
@@ -86,18 +90,32 @@ const getSearch = () => {
     };
     const displayDetailsInfo = (data) =>{
         console.log(data);
+        const release = data.releaseDate;
         const phoneDetails = document.getElementById('phone-details');
         const div = document.createElement('div');
         div.classList.add('card');
         div.innerHTML = `
+        <div class="row g-0">
+        <div class="col-md-4">
         <img src="${data.image}" class="card-img-top" alt="...">
+        </div>
+        <div class="col-md-8">
         <div class="card-body">
-            <h5 class="card-title">${data.name}</h5>
-            <p class="card-text">${data.releaseDate}</p>
-            <p class="card-text">${data.mainFeatures}</p>
+            <h5 class="card-title">Name: ${data.name}</h5>
+            <p class="card-text"><b>Release-date:</b> ${data.releaseDate = "" ? "No release Date Found" :release}</p>
+            <h6><b>Features:</b></h6>
+            <p class="card-text"><span><i><b>Storage:</b></i> ${data.mainFeatures.storage}</span><span><i><b> Display-Size:</b></i> ${data.mainFeatures.displaySize}</span>
+            <span><i><b> Chip-set:</b></i> ${data.mainFeatures.chipSet}</span>
+            <span><i><b> Memory:</b></i> ${data.mainFeatures.memory}</span></p>
+            
              
         </div>
+        </div>
+        </div>
     `;
+    phoneDetails.textContent = "";
     phoneDetails.appendChild(div);
+    
 }
+
  
