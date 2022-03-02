@@ -3,15 +3,39 @@
 body{
     font-family: 'Lora', serif;
 }
-
+.navbar{
+    background-color: #06D1F7 !important;
+}
 
 .icon-img{
-    width: 7%;
+    width: 8%;
     
+}
+.navbar-brand{
+    font-size: 35px;
+    font-weight: 500 !important;
+}
+.nav-link{
+    font-size: 22px !important;
+    font-weight: 600 !important;
 }
 .title-img{
     width: 15%;
 }
+.title-text{
+    color: #0D74F8;
+    font-weight: 600;
+}
+#search-error{
+    font-weight: 700;
+    font-size: 28px;
+}
+#search-result{
+    font-weight: 700;
+    font-size: 28px;
+    color: #0d74f8;
+}
+
 .custom-form{
     width: 50% !important;
 }

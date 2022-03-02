@@ -27,11 +27,12 @@ const getSearch = () => {
             .then(data => displayData(data.data))
             
         };
-        
+        // Display data
         const resultValue = document.getElementById('search-result');
         const phoneDetails = document.getElementById('phone-details');
         const displayData = data =>{
             const resultContainer = document.getElementById('display-api');
+            // Count value result
             if (data.length > 1) {
                 resultValue.innerHTML = `${data.length} Result found for "<strong>${searchField.value}</strong>"`;
             }
@@ -64,7 +65,7 @@ const getSearch = () => {
                   <p class="card-text">Name : ${phoneData.phone_name}</p>
                 </div>
                 <div class="btn-details">
-                    <button onclick="findDetails('${phoneData.slug}')" class="btn btn-primary px-2 fw-bolder">More Info</button>
+                    <button onclick="findDetails('${phoneData.slug}')" class="btn btn-primary px-2 fw-bolder ms-3">More Info</button>
 
                 </div>
               </div>
@@ -82,14 +83,17 @@ const getSearch = () => {
     }
 
 }
+    // Load Id details
     const findDetails =(data) =>{
         const url = `https://openapi.programming-hero.com/api/phone/${data}`;
         fetch(url)
         .then(res => res.json())
         .then(data => displayDetailsInfo(data.data))
     };
+
+    // Display details
     const displayDetailsInfo = (data) =>{
-        console.log(data);
+        // console.log(data);
         // declared sensor section
         const sensorList = data.mainFeatures.sensors;
         const listNumber = name => name;
@@ -97,11 +101,8 @@ const getSearch = () => {
         // console.log(arraySensorList);
 
         //declared others section 
-        if(data.others){
-            console.log(data.others);
-        }else{
-            console.log("hello");
-        }
+        const othersDetails = data.others;
+        
 
         const release = data.releaseDate;
         const phoneDetails = document.getElementById('phone-details');
@@ -122,7 +123,13 @@ const getSearch = () => {
             <span><i><b> Memory:</b></i> ${data.mainFeatures.memory}</span></p>
             <h5><b>Sensors:</b></h5>
             <p class="card-text">${arraySensorList}</p>
-            
+            <h5><b>Others:</b></h5>
+            <p class="card-text">
+            <span><b>WLAN</b> : ${data.others ? othersDetails.WLAN : "Not Found"}</span>
+            <span><b>Bluetooth</b> : ${data.others ? othersDetails.Bluetooth : "Not Found"}</span>
+            <span><b>GPS</b> : ${data.others ? othersDetails.GPS : "Not Found"}</span>
+            <span><b>NFC</b> : ${data.others ? othersDetails.NFC : "Not Found"}</span>
+            <span><b>Radio</b> : ${data.others ? othersDetails.Radio : "Not Found"}</span></p>
              
         </div>
         </div>

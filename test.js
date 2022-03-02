@@ -5,9 +5,6 @@ const newNum2 = newNum.map(double);
 
 const num1 = {name:'pritom', age:21, phoneName:'samsung', balance: 5000};
 
-for(const listNum1 in num1){
-    // console.log(listNum1,":",num1[listNum1]);
-}
 
 const key = Object.keys(num1);
 // console.log(key);
