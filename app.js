@@ -64,7 +64,7 @@ const getSearch = () => {
                   <p class="card-text">Name : ${phoneData.phone_name}</p>
                 </div>
                 <div class="btn-details">
-                    <button onclick="findDetails('${phoneData.slug}')" class="btn btn-primary px-2 fw-bolder">Find More</button>
+                    <button onclick="findDetails('${phoneData.slug}')" class="btn btn-primary px-2 fw-bolder">More Info</button>
 
                 </div>
               </div>
@@ -103,7 +103,7 @@ const getSearch = () => {
         <div class="card-body">
             <h5 class="card-title">Name: ${data.name}</h5>
             <p class="card-text"><b>Release-date:</b> ${data.releaseDate = "" ? "No release Date Found" :release}</p>
-            <h6><b>Features:</b></h6>
+            <h5><b>Features:</b></h5>
             <p class="card-text"><span><i><b>Storage:</b></i> ${data.mainFeatures.storage}</span><span><i><b> Display-Size:</b></i> ${data.mainFeatures.displaySize}</span>
             <span><i><b> Chip-set:</b></i> ${data.mainFeatures.chipSet}</span>
             <span><i><b> Memory:</b></i> ${data.mainFeatures.memory}</span></p>
